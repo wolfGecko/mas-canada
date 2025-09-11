@@ -44,8 +44,8 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Contact</h4>
             <div className="text-gray-300 space-y-2">
               <p>Email: info@maswrestlingcanada.ca</p>
-              <p>Phone: (555) 123-4567</p>
-              <p>Address: 123 Sports Ave<br/>Toronto, ON M5V 3A8</p>
+              <p>Phone: (403) 901-4141</p>
+              <p>Address: 4828 Pacific Rd NE #1<br/>Calgary, AB T2E 5S5</p>
             </div>
           </div>
         </div>

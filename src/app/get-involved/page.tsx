@@ -64,11 +64,11 @@ export default function GetInvolved() {
               </div>
 
               <div className="border rounded-lg p-6">
-                <h3 className="text-xl font-bold mb-2 text-red-600">Calgary Strength Academy</h3>
-                <p className="text-gray-700 mb-2"><strong>Location:</strong> Calgary, AB</p>
-                <p className="text-gray-700 mb-2"><strong>Contact:</strong> info@calgarystrength.ca</p>
-                <p className="text-gray-700 mb-4"><strong>Schedule:</strong> Mondays & Wednesdays, 6:30-8:30 PM</p>
-                <p className="text-sm text-gray-600">Home of multiple national champions with elite training programs.</p>
+                <h3 className="text-xl font-bold mb-2 text-red-600">The Strength Edge</h3>
+                <p className="text-gray-700 mb-2"><strong>Location:</strong> 4828 Pacific Rd NE #1, Calgary, AB</p>
+                <p className="text-gray-700 mb-2"><strong>Contact:</strong> (403) 901-4141</p>
+                <p className="text-gray-700 mb-4"><strong>Schedule:</strong> Thursdays 7 PM, Saturdays 1 PM</p>
+                <p className="text-sm text-gray-600">Calgary's premiere 24h strength sports gym specializing in strongman and competitive athletics.</p>
               </div>
 
               <div className="border rounded-lg p-6">

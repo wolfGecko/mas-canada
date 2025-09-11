@@ -9,8 +9,15 @@ export default function Home() {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-red-600 to-red-800 text-white py-20">
-        <div className="container mx-auto px-6 text-center">
+      <section 
+        className="relative bg-gray-900 text-white py-20 min-h-[80vh] flex items-center bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/homepage/andrew.jpg')`
+        }}
+      >
+        
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-6 text-center w-full">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             Mas Wrestling Canada
           </h1>
