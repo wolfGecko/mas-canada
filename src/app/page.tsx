@@ -12,7 +12,7 @@ export default function Home() {
       <section 
         className="relative bg-gray-900 text-white py-20 min-h-[80vh] flex items-center bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/homepage/andrew.jpg')`
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/homepage/andrew.jpg')`
         }}
       >
         

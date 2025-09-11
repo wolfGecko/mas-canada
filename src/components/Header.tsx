@@ -1,13 +1,20 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
   return (
-    <header className="bg-white shadow-md">
-      <div className="container mx-auto px-6 py-4">
+    <header className="bg-white shadow-md py-2">
+      <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <Link href="/" className="text-2xl font-bold text-red-600">
-              Mas Wrestling Canada
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/logos/280pxmaslogo.png"
+                alt="Mas Wrestling Canada"
+                width={140}
+                height={70}
+                className="h-16 w-auto"
+              />
             </Link>
           </div>
           
