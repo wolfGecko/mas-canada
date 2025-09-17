@@ -37,9 +37,6 @@ export default function Header() {
             <Link href="/get-involved" className="text-gray-700 hover:text-red-600 font-medium">
               Get Involved
             </Link>
-            <Link href="/admin" className="btn-primary">
-              Admin
-            </Link>
           </nav>
 
           {/* Mobile menu button */}

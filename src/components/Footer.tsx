@@ -51,7 +51,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Mas Wrestling Canada. All rights reserved.</p>
+          <p>&copy; 2025 Mas Wrestling Canada. All rights reserved. | <Link href="/admin" className="text-gray-500 hover:text-gray-300">Admin</Link></p>
         </div>
       </div>
     </footer>
