@@ -1,12 +1,17 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import PostgresAdapter from "@auth/pg-adapter";
-import { sql } from "@vercel/postgres";
+import { Pool } from "pg";
 import { authConfig } from "./auth.config";
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false }
+});
 
 export const { auth, signIn, signOut, handlers } = NextAuth({
   ...authConfig,
-  adapter: PostgresAdapter(sql),
+  adapter: PostgresAdapter(pool),
   providers: [
     Credentials({
       async authorize(credentials) {
