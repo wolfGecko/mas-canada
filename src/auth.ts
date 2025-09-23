@@ -1,8 +1,8 @@
-import NextAuth from 'next-auth';
-import Credentials from 'next-auth/providers/credentials';
-import { PostgresAdapter } from '@auth/pg-adapter';
-import { sql } from '@vercel/postgres';
-import { authConfig } from './auth.config';
+import NextAuth from "next-auth";
+import Credentials from "next-auth/providers/credentials";
+import PostgresAdapter from "@auth/pg-adapter";
+import { sql } from "@vercel/postgres";
+import { authConfig } from "./auth.config";
 
 export const { auth, signIn, signOut, handlers } = NextAuth({
   ...authConfig,
@@ -17,11 +17,11 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
 
         // Simple hardcoded credentials for admin access
         // In production, you'd validate against a database
-        if (username === 'admin' && password === 'maswrestling2024') {
+        if (username === "admin" && password === "maswrestling2024") {
           return {
-            id: '1',
-            name: 'Admin',
-            email: 'admin@maswrestling.ca',
+            id: "1",
+            name: "Admin",
+            email: "admin@maswrestling.ca",
           };
         }
 
