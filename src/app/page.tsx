@@ -1,6 +1,5 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
@@ -23,7 +22,7 @@ export default function Home() {
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
             Discover the ancient sport of strength, technique, and tradition. 
-            Join Canada's growing Mas Wrestling community.
+            Join {"Canada's"} growing Mas Wrestling community.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/get-involved" className="bg-white text-red-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors">
@@ -44,11 +43,11 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">What is Mas Wrestling?</h2>
               <p className="text-lg text-gray-700 mb-6">
                 Mas Wrestling is an ancient sport that originated in Yakutia (Sakha Republic), Russia. 
-                Two competitors sit across from each other and attempt to pull their opponent across a 
-                dividing line using only a wooden stick called a "mas."
+                Two competitors sit across from each other and attempt to pull their opponent across a
+                dividing line using only a wooden stick called a {"mas."}
               </p>
               <p className="text-lg text-gray-700 mb-6">
-                This sport requires incredible core strength, technique, and mental focus. It's not just 
+                This sport requires incredible core strength, technique, and mental focus. {"It's"} not just
                 about raw power - strategy and timing are crucial for victory.
               </p>
               <Link href="/about" className="text-red-600 font-semibold hover:text-red-800">
@@ -182,7 +181,7 @@ export default function Home() {
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Ready to Get Involved?</h2>
           <p className="text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
-            Whether you're looking to compete, coach, or simply learn more about this fascinating sport, 
+            Whether {"you're"} looking to compete, coach, or simply learn more about this fascinating sport, 
             Mas Wrestling Canada welcomes athletes of all skill levels and backgrounds.
           </p>
           

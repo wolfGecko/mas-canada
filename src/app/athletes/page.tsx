@@ -120,7 +120,7 @@ export default function Athletes() {
               <h3 className="text-2xl font-bold mb-4">Join Our Team</h3>
               <p className="text-gray-700 mb-6">
                 Are you competing in Mas Wrestling and want to be featured on our website? 
-                We'd love to showcase your achievements and help grow the sport together.
+                {"We'd"} love to showcase your achievements and help grow the sport together.
               </p>
               <Link href="/contact" className="btn-primary">
                 Contact Us to Be Featured

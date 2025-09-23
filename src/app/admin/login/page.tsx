@@ -30,7 +30,7 @@ export default function AdminLogin() {
       } else {
         router.push('/admin');
       }
-    } catch (error) {
+    } catch {
       setError('An error occurred. Please try again.');
     } finally {
       setIsLoading(false);

@@ -13,7 +13,7 @@ export default function GetInvolved() {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Get Involved</h1>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Join the growing community of Mas Wrestling enthusiasts across Canada. 
-              Whether you're a complete beginner or an experienced athlete, there's a place for you in our sport.
+              Whether {"you're"} a complete beginner or an experienced athlete, {"there's"} a place for you in our sport.
             </p>
           </div>
 
@@ -68,7 +68,7 @@ export default function GetInvolved() {
                 <p className="text-gray-700 mb-2"><strong>Location:</strong> 4828 Pacific Rd NE #1, Calgary, AB</p>
                 <p className="text-gray-700 mb-2"><strong>Contact:</strong> (403) 901-4141</p>
                 <p className="text-gray-700 mb-4"><strong>Schedule:</strong> Thursdays 7 PM, Saturdays 1 PM</p>
-                <p className="text-sm text-gray-600">Calgary's premiere 24h strength sports gym specializing in strongman and competitive athletics.</p>
+                <p className="text-sm text-gray-600">{"Calgary's"} premiere 24h strength sports gym specializing in strongman and competitive athletics.</p>
               </div>
 
               <div className="border rounded-lg p-6">
@@ -96,7 +96,7 @@ export default function GetInvolved() {
               </div>
 
               <div className="border rounded-lg p-6 bg-red-50">
-                <h3 className="text-xl font-bold mb-2 text-red-600">Don't See Your Area?</h3>
+                <h3 className="text-xl font-bold mb-2 text-red-600">{"Don't"} See Your Area?</h3>
                 <p className="text-gray-700 mb-4">
                   Interested in starting a club in your community? We provide support and resources for new clubs.
                 </p>
@@ -165,7 +165,7 @@ export default function GetInvolved() {
                 <li>• Focus on proper technique and safety</li>
                 <li>• Progressive skill development</li>
                 <li>• Opportunities to compete at your level</li>
-                <li>• Cultural education about the sport's history</li>
+                <li>• Cultural education about the {"sport's"} history</li>
               </ul>
             </div>
           </div>

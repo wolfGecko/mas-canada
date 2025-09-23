@@ -101,7 +101,7 @@ export default function Events() {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Events & Competitions</h1>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Join us at mas wrestling events across Canada. From beginner workshops to elite competitions,
-              there's an event for every skill level and interest.
+              {"there's"} an event for every skill level and interest.
             </p>
           </div>
 

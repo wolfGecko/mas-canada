@@ -47,7 +47,7 @@ export default function Contact() {
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Get in touch with Mas Wrestling Canada. We're here to help with questions about the sport, 
+              Get in touch with Mas Wrestling Canada. {"We're"} here to help with questions about the sport, 
               finding training opportunities, or getting involved in our community.
             </p>
           </div>
@@ -105,7 +105,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <label htmlFor="interest" className="block text-sm font-medium text-gray-700 mb-2">
-                        I'm Interested In
+                        {"I'm"} Interested In
                       </label>
                       <select
                         id="interest"

@@ -1,9 +1,12 @@
 import NextAuth from 'next-auth';
 import Credentials from 'next-auth/providers/credentials';
+import { PostgresAdapter } from '@auth/pg-adapter';
+import { sql } from '@vercel/postgres';
 import { authConfig } from './auth.config';
 
 export const { auth, signIn, signOut, handlers } = NextAuth({
   ...authConfig,
+  adapter: PostgresAdapter(sql),
   providers: [
     Credentials({
       async authorize(credentials) {

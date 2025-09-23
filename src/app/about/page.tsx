@@ -17,9 +17,7 @@ export default function About() {
                 <div>
                   <h2 className="text-2xl font-bold mb-4">The Ancient Sport</h2>
                   <p className="text-gray-700 mb-4">
-                    Mas Wrestling originated in the Sakha Republic (Yakutia) of Russia, where it has been practiced 
-                    for centuries as both a sport and cultural tradition. The word "mas" refers to the wooden stick 
-                    that competitors grip during the match.
+                    {'Mas Wrestling originated in the Sakha Republic (Yakutia) of Russia, where it has been practiced for centuries as both a sport and cultural tradition. The word "mas" refers to the wooden stick that competitors grip during the match.'}
                   </p>
                   <p className="text-gray-700">
                     This unique sport tests not only physical strength but also technique, balance, and mental 
@@ -41,7 +39,7 @@ export default function About() {
                   <ul className="text-gray-700 space-y-2">
                     <li>• Two competitors sit facing each other</li>
                     <li>• Feet are placed against a dividing board</li>
-                    <li>• Both athletes grip the wooden "mas" stick</li>
+                    <li>• Both athletes grip the wooden {"mas"} stick</li>
                     <li>• Arms must remain straight throughout</li>
                   </ul>
                 </div>
