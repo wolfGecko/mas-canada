@@ -1,65 +1,21 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import { pool, mapDbRowToAthlete } from '@/lib/db';
+import type { Athlete } from '@/types/athlete';
 
-const athletes = [
-  {
-    id: 'sarah-thompson',
-    name: 'Sarah Thompson',
-    title: 'National Champion',
-    bio: 'Two-time Canadian Mas Wrestling champion with over 8 years of experience in the sport.',
-    achievements: ['2023 National Champion', '2022 National Champion', 'World Championships Bronze Medal'],
-    province: 'Ontario',
-    experience: '8 years'
-  },
-  {
-    id: 'marcus-chen',
-    name: 'Marcus Chen',
-    title: 'Rising Star',
-    bio: 'Young talent making waves in the junior divisions with exceptional technique.',
-    achievements: ['2023 Junior National Champion', 'Provincial Champion', 'Rising Talent Award'],
-    province: 'British Columbia',
-    experience: '3 years'
-  },
-  {
-    id: 'david-rodriguez',
-    name: 'David Rodriguez',
-    title: 'Veteran Competitor',
-    bio: '15-year veteran and coach, helping develop the next generation of Canadian mas wrestlers.',
-    achievements: ['5x National Champion', 'World Championships Silver Medal', 'Coach of the Year 2022'],
-    province: 'Alberta',
-    experience: '15 years'
-  },
-  {
-    id: 'emma-wilson',
-    name: 'Emma Wilson',
-    title: 'Provincial Champion',
-    bio: 'Dominant force in the women\'s division with incredible technique and determination.',
-    achievements: ['Provincial Champion', 'Regional Champion', 'Technique Excellence Award'],
-    province: 'Quebec',
-    experience: '5 years'
-  },
-  {
-    id: 'james-mitchell',
-    name: 'James Mitchell',
-    title: 'Masters Division Champion',
-    bio: 'Proving that age is just a number in the masters division with consistent performance.',
-    achievements: ['Masters National Champion', '40+ Division Champion', 'Sportsmanship Award'],
-    province: 'Nova Scotia',
-    experience: '12 years'
-  },
-  {
-    id: 'sophia-nakamura',
-    name: 'Sophia Nakamura',
-    title: 'Technical Specialist',
-    bio: 'Known for her innovative techniques and analytical approach to the sport.',
-    achievements: ['Technical Innovation Award', 'Regional Champion', 'Junior Coach Certification'],
-    province: 'Manitoba',
-    experience: '6 years'
+async function getAthletes(): Promise<Athlete[]> {
+  try {
+    const result = await pool.query('SELECT * FROM athletes ORDER BY name ASC');
+    return result.rows.map(mapDbRowToAthlete);
+  } catch (error) {
+    console.error('Error fetching athletes:', error);
+    return [];
   }
-];
+}
 
-export default function Athletes() {
+export default async function Athletes() {
+  const athletes = await getAthletes();
   return (
     <div className="min-h-screen">
       <Header />
@@ -84,11 +40,11 @@ export default function Athletes() {
                   <h3 className="text-xl font-bold mb-2">{athlete.name}</h3>
                   <p className="text-red-600 font-semibold mb-3">{athlete.title}</p>
                   <p className="text-gray-700 mb-4">{athlete.bio}</p>
-                  
+
                   <div className="mb-4">
                     <div className="flex justify-between text-sm text-gray-600 mb-2">
-                      <span><strong>Province:</strong> {athlete.province}</span>
-                      <span><strong>Experience:</strong> {athlete.experience}</span>
+                      <span><strong>Province:</strong> {athlete.stats?.province || '-'}</span>
+                      <span><strong>Experience:</strong> {athlete.stats?.experience || '-'}</span>
                     </div>
                   </div>
 
@@ -104,8 +60,8 @@ export default function Athletes() {
                     </ul>
                   </div>
 
-                  <Link 
-                    href={`/athletes/${athlete.id}`}
+                  <Link
+                    href={`/athletes/${athlete.slug}`}
                     className="text-red-600 hover:text-red-800 font-semibold"
                   >
                     View Full Profile →
