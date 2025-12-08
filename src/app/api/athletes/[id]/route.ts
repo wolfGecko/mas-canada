@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { auth } from '@/auth';
 import { pool, mapDbRowToAthlete } from '@/lib/db';
-import type { Athlete, UpdateAthleteInput } from '@/types/athlete';
+import type { UpdateAthleteInput } from '@/types/athlete';
 
 interface RouteParams {
   params: Promise<{ id: string }>;
@@ -86,7 +86,7 @@ export async function PUT(request: Request, { params }: RouteParams) {
 
     // Build update query dynamically based on provided fields
     const updates: string[] = [];
-    const values: any[] = [];
+    const values: unknown[] = [];
     let paramIndex = 1;
 
     if (body.name !== undefined) {

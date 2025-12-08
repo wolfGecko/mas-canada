@@ -1,5 +1,6 @@
 // Database connection helper for PostgreSQL
 import { Pool } from 'pg';
+import type { Athlete, CreateAthleteInput } from '@/types/athlete';
 
 /**
  * Shared database connection pool
@@ -13,26 +14,26 @@ export const pool = new Pool({
 /**
  * Helper to convert database row (snake_case) to Athlete type (camelCase)
  */
-export function mapDbRowToAthlete(row: any) {
+export function mapDbRowToAthlete(row: Record<string, unknown>): Athlete {
   return {
-    id: row.id,
-    slug: row.slug,
-    name: row.name,
-    title: row.title,
-    bio: row.bio,
-    fullBio: row.full_bio,
-    stats: row.stats,
-    achievements: row.achievements,
-    competitionHistory: row.competition_history,
-    created_at: row.created_at,
-    updated_at: row.updated_at,
+    id: row.id as number,
+    slug: row.slug as string,
+    name: row.name as string,
+    title: row.title as string,
+    bio: row.bio as string,
+    fullBio: row.full_bio as string | undefined,
+    stats: row.stats as Athlete['stats'],
+    achievements: row.achievements as string[],
+    competitionHistory: row.competition_history as Athlete['competitionHistory'],
+    created_at: row.created_at as string | undefined,
+    updated_at: row.updated_at as string | undefined,
   };
 }
 
 /**
  * Helper to convert Athlete input (camelCase) to database fields (snake_case)
  */
-export function mapAthleteToDbFields(athlete: any) {
+export function mapAthleteToDbFields(athlete: CreateAthleteInput) {
   return {
     slug: athlete.slug,
     name: athlete.name,
