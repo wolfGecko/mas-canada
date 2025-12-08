@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -11,7 +10,6 @@ export default function AdminLogin() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,12 +25,13 @@ export default function AdminLogin() {
 
       if (result?.error) {
         setError("Invalid username or password");
-      } else {
-        router.push("/admin");
+        setIsLoading(false);
+      } else if (result?.ok) {
+        // Redirect to admin dashboard
+        window.location.href = "/admin";
       }
     } catch {
       setError("An error occurred. Please try again.");
-    } finally {
       setIsLoading(false);
     }
   };
