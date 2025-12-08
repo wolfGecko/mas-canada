@@ -4,21 +4,15 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import DeleteAthleteButton from '@/components/admin/DeleteAthleteButton';
+import { pool, mapDbRowToAthlete } from '@/lib/db';
 import type { Athlete } from '@/types/athlete';
 
 async function getAthletes(): Promise<Athlete[]> {
   try {
-    const baseUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000';
-    const response = await fetch(`${baseUrl}/api/athletes`, {
-      cache: 'no-store',
-    });
-
-    if (!response.ok) {
-      throw new Error('Failed to fetch athletes');
-    }
-
-    const data = await response.json();
-    return data.data.athletes || [];
+    const result = await pool.query(
+      'SELECT * FROM athletes ORDER BY name ASC'
+    );
+    return result.rows.map(mapDbRowToAthlete);
   } catch (error) {
     console.error('Error fetching athletes:', error);
     return [];
