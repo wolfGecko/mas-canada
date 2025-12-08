@@ -2,18 +2,25 @@ import type { NextAuthConfig } from 'next-auth';
 
 export const authConfig = {
   pages: {
-    signIn: '/admin',
+    signIn: '/admin/login',
   },
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
       const isLoggedIn = !!auth?.user;
       const isOnAdmin = nextUrl.pathname.startsWith('/admin');
-      if (isOnAdmin) {
-        if (isLoggedIn) return true;
-        return false; // Redirect unauthenticated users to login page
-      } else if (isLoggedIn) {
-        return Response.redirect(new URL('/admin', nextUrl));
+      const isOnLoginPage = nextUrl.pathname === '/admin/login';
+
+      // Allow access to login page
+      if (isOnLoginPage) {
+        return true;
       }
+
+      // Protect all other /admin routes
+      if (isOnAdmin) {
+        return isLoggedIn;
+      }
+
+      // Allow all other routes
       return true;
     },
   },
