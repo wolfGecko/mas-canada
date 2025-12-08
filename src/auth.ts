@@ -15,9 +15,16 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
           password: string;
         };
 
-        // Simple hardcoded credentials for admin access
-        // In production, you'd validate against a database
-        if (username === "admin" && password === "maswrestling2024") {
+        // Validate credentials against environment variables
+        const adminUsername = process.env.ADMIN_USERNAME;
+        const adminPassword = process.env.ADMIN_PASSWORD;
+
+        if (!adminUsername || !adminPassword) {
+          console.error('Admin credentials not configured in environment variables');
+          return null;
+        }
+
+        if (username === adminUsername && password === adminPassword) {
           return {
             id: "1",
             name: "Admin",

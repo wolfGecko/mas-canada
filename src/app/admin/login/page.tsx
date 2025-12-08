@@ -1,37 +1,37 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { signIn } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import { useState } from "react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function AdminLogin() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    setError('');
+    setError("");
 
     try {
-      const result = await signIn('credentials', {
+      const result = await signIn("credentials", {
         username,
         password,
         redirect: false,
       });
 
       if (result?.error) {
-        setError('Invalid username or password');
+        setError("Invalid username or password");
       } else {
-        router.push('/admin');
+        router.push("/admin");
       }
     } catch {
-      setError('An error occurred. Please try again.');
+      setError("An error occurred. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -46,7 +46,9 @@ export default function AdminLogin() {
           <div className="max-w-md mx-auto bg-white rounded-lg shadow-lg p-8">
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold mb-2">Admin Login</h1>
-              <p className="text-gray-600">Access the content management system</p>
+              <p className="text-gray-600">
+                Access the content management system
+              </p>
             </div>
 
             <form onSubmit={handleLogin} className="space-y-6">
@@ -57,7 +59,10 @@ export default function AdminLogin() {
               )}
 
               <div>
-                <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="username"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Username
                 </label>
                 <input
@@ -72,7 +77,10 @@ export default function AdminLogin() {
               </div>
 
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Password
                 </label>
                 <input
@@ -91,15 +99,9 @@ export default function AdminLogin() {
                 className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={isLoading}
               >
-                {isLoading ? 'Signing in...' : 'Login'}
+                {isLoading ? "Signing in..." : "Login"}
               </button>
             </form>
-
-            <div className="mt-8 p-4 bg-blue-50 rounded-lg">
-              <h3 className="font-semibold text-blue-800 mb-2">Demo Credentials:</h3>
-              <p className="text-sm text-blue-700">Username: <code className="bg-blue-100 px-1 rounded">admin</code></p>
-              <p className="text-sm text-blue-700">Password: <code className="bg-blue-100 px-1 rounded">maswrestling2024</code></p>
-            </div>
           </div>
         </div>
       </div>
